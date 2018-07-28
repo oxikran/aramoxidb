@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "armoxiDB", "armoxiDB\armoxiDB.csproj", "{4891A050-CBF4-4DB7-8696-4D1DBC1F9DFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4891A050-CBF4-4DB7-8696-4D1DBC1F9DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4891A050-CBF4-4DB7-8696-4D1DBC1F9DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4891A050-CBF4-4DB7-8696-4D1DBC1F9DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4891A050-CBF4-4DB7-8696-4D1DBC1F9DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BE138FA-9B4F-45C3-B8E3-35F1FEED54EA}
+	EndGlobalSection
+EndGlobal
