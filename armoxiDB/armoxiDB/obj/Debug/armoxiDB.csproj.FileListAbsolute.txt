@@ -1,0 +1,6 @@
+C:\Users\narciso\source\repos\aramoxidb\armoxiDB\armoxiDB\bin\Debug\armoxiDB.dll
+C:\Users\narciso\source\repos\aramoxidb\armoxiDB\armoxiDB\bin\Debug\armoxiDB.pdb
+C:\Users\narciso\source\repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.csprojAssemblyReference.cache
+C:\Users\narciso\source\repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.csproj.CoreCompileInputs.cache
+C:\Users\narciso\source\repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.dll
+C:\Users\narciso\source\repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.pdb
