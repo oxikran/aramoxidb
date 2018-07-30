@@ -13,6 +13,7 @@ namespace armoxiDB
     {
         String[] Filtro;
         String[] activo;
+        int registro;
         String Archivo;
         String[] Campos;
         String rutaT;
@@ -82,6 +83,96 @@ namespace armoxiDB
             }
 
             
+        }
+
+        public String[] getindex()
+        {
+
+            String[] Output;
+
+            Output = Convert.ToString(File.ReadAllText(rutaT + ".axid")).Split(Convert.ToChar("|"));
+            
+            return Output;
+
+        }
+
+        public void delete()
+        {
+
+            activo[registro] = "";
+
+        }
+
+        public int deleteindex(String Clave)
+        {
+            String[] aux;
+            String[] Claves = getindex();
+            long index = 0;
+            
+            for (index =0 ; index <= Claves.LongLength;index++)
+            {
+
+                aux = Claves[index].Split(Convert.ToChar(","));
+                if (aux[0] == Clave)
+                {
+
+                    Claves[index] = "";
+
+                    break;
+
+                } 
+            }
+
+            grabarindices(Claves);
+
+            return 1;
+
+        }
+
+        private int grabarindices(string[] claves)
+        {
+            try{
+
+                int index;
+
+                for (index = 0; index <= claves.LongLength;index++)
+                {
+
+                    if( claves[index] != "")
+                    {
+
+                        File.AppendAllText(rutaT + ".axid", claves[index] + "|");
+
+                    }
+
+                }
+
+                return 1;
+
+            }
+            catch
+            {
+                return 2;
+            }
+        }
+
+        private String Krypto(String Input)
+        {
+            String Output;
+            int size;
+            int index;
+            Output = "";
+            size = Input.Length;
+
+            for(index=0; index <= size; index++)
+            {
+
+                Output = Output + Convert.ToString(Convert.ToDecimal((int)Convert.ToChar(Input.Substring(index,1)))*8);
+
+            }
+
+            return Output;
+
         }
 
         private String Unkrypto(String Input)
