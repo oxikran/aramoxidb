@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 
 namespace armoxiDB
@@ -126,6 +126,37 @@ namespace armoxiDB
             grabarindices(Claves);
 
             return 1;
+
+        }
+
+        public void CloseDB()
+        {
+
+            Array.Clear(Filtro, 0, Filtro.Length);
+            Array.Clear(activo, 0, activo.Length);
+            registro = 0;
+            Array.Clear(Campos ,0, Campos.Length);
+            Archivo = "";
+            rutaT = "";
+
+        }
+
+        public void DeleteDB()
+        {
+            try
+            {
+                File.Delete(rutaT + ".axid");
+                File.Delete(rutaT + ".axdb");
+
+            }
+            catch
+            {
+
+                MessageBox.Show("Error al eliminar");
+
+                //messa( "error al eliminar");
+
+            }
 
         }
 
