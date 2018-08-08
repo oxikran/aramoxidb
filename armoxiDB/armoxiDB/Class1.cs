@@ -25,7 +25,7 @@ namespace armoxiDB
             try
             {
                 Archivo = Unkrypto(File.ReadAllText(BD + ".axdb"));
-
+                CargaInfo();
                 return 2;
             }
             catch{
@@ -33,6 +33,15 @@ namespace armoxiDB
                 return 1;
 
             }
+        }
+
+        private void CargaInfo()
+        {
+
+            Campos = getindex();
+
+
+
         }
 
         public int createindex(long Clave, String nombreCampo, long Longitud)
@@ -160,6 +169,17 @@ namespace armoxiDB
 
         }
 
+        public void movefirst()
+        {
+
+            if (Filtro.Length > 0)
+            {
+
+                
+            }
+
+        }
+
         private int grabarindices(string[] claves)
         {
             try{
@@ -206,31 +226,70 @@ namespace armoxiDB
 
         }
 
-        private String Unkrypto(String Input)
+        private String[] Unkrypto(String Input)
         {
-            String Output;
+            String[] Output;
             String[] aux;
+            String temp;
             char separador;
+            char retorno;
             long index;
+            long index2;
             index = 0;
+            index2 = 0;
             separador = Convert.ToChar("|");
+            retorno = Convert.ToChar("€");
 
 
-            Output = "";
+            temp = "";
 
             if (Input.Length == 0){
+
+
 
             }  else
             {
 
-                aux = Input.Split( separador );
-                for (index = 0; index <= aux.LongLength; index ++ ){
+                Output = Input.Split(retorno);
 
-                    Output = Output + Convert.ToString(char.ConvertFromUtf32(Convert.ToChar(Convert.ToDecimal(aux[index]) / 8)));
+                for (index = 0;index <= Output.LongLength ; index ++)
+                {
 
-                    //Convert.ToDecimal(aux[index]) / 8;
+                    aux = Output[index].Split(separador);
+
+                    for (index2 = 0; index2 <= aux.LongLength; index2 ++)
+                    {
+
+                        
+
+                            temp = temp + Convert.ToString(char.ConvertFromUtf32(Convert.ToChar(Convert.ToDecimal(aux[index]) / 8)));
+
+                        
+
+                        //Convert.ToDecimal(aux[index]) / 8;
+
+                    }
+
+                    Output[index] = temp;
 
                 }
+
+                //aux = Input.Split( separador );
+                //for (index = 0; index <= aux.LongLength; index ++ ){
+
+                //    if (aux[index] == "€"){
+
+
+
+                //    }else{
+
+                //        Output = Output + Convert.ToString(char.ConvertFromUtf32(Convert.ToChar(Convert.ToDecimal(aux[index]) / 8)));
+
+                //    }
+
+                //    //Convert.ToDecimal(aux[index]) / 8;
+
+                //}
 
             }
 
