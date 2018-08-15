@@ -12,9 +12,10 @@ namespace armoxiDB
     public class aramoxi
     {
         String[] Filtro;
-        String[] activo;
+        String[] Relacion;
+        String activo;
         int registro;
-        String Archivo;
+        String[] Archivo;
         String[] Campos;
         String rutaT;
 
@@ -66,6 +67,62 @@ namespace armoxiDB
             }
         }
 
+
+        public String OxiField(int num)
+        {
+
+
+            String[] aux;
+            int inicio;
+            String salida;
+            inicio = 0;
+
+            
+
+            for(int index = 0 ; index < num ; index ++)
+            {
+
+                aux = Campos[index].Split(Convert.ToChar(","));
+
+                inicio += Convert.ToInt16(aux[0]);
+
+
+
+            }
+
+            aux = Campos[num].Split(Convert.ToChar(","));
+
+            salida = activo.Substring(inicio, Convert.ToInt16(aux[2])); 
+
+            return salida;
+
+        }
+
+        public void addData(int key,String data)
+        {
+
+            int index = 0;
+            String[] aux;
+
+            for(index = 0;index <= Campos.Length; index++)
+            {
+
+                aux = Campos[index].Split(Convert.ToChar(","));
+
+                if (aux[0] == Convert.ToString(key))
+                {
+
+                    break;
+
+                }
+
+
+            }
+
+
+
+        }
+
         public int createBD(String ruta, String nombredb)
         {
 
@@ -108,7 +165,7 @@ namespace armoxiDB
         public void delete()
         {
 
-            activo[registro] = "";
+            Filtro[registro] = "";
 
         }
 
@@ -138,14 +195,16 @@ namespace armoxiDB
 
         }
 
+
+
         public void CloseDB()
         {
 
             Array.Clear(Filtro, 0, Filtro.Length);
-            Array.Clear(activo, 0, activo.Length);
+            activo = "";
             registro = 0;
             Array.Clear(Campos ,0, Campos.Length);
-            Archivo = "";
+            Array.Clear(Archivo,0, Archivo.Length);
             rutaT = "";
 
         }
@@ -175,7 +234,87 @@ namespace armoxiDB
             if (Filtro.Length > 0)
             {
 
-                
+                activo = Filtro[0];
+
+                registro = 0;
+
+            }
+            else
+            {
+
+                Filtro = Archivo;
+
+                activo = Filtro[0];
+
+                registro = 0;
+
+
+            }
+
+        }
+
+
+        public void MoveLastest()
+        {
+
+
+            if (Filtro.Length > 0)
+            {
+
+                activo = Filtro[Filtro.Length-1];
+
+                registro = Filtro.Length -1;
+
+            }
+            else
+            {
+
+                Filtro = Archivo;
+
+                activo = Filtro[Filtro.Length - 1];
+
+                registro = Filtro.Length - 1;
+
+
+            }
+
+
+        }
+
+        public void MoveNext()
+        {
+
+            if (registro == Filtro.Length)
+            {
+
+                MessageBox.Show("Se encuentra en el final del archivo");
+
+            }
+            else
+            {
+
+                activo = Filtro[registro + 1];
+                registro += 1;
+
+            }
+
+        }
+
+        public void MoveLast()
+        {
+
+            if (registro == 0)
+            {
+
+                MessageBox.Show("Se encuentra en el inicio del archivo");
+
+            }
+            else
+            {
+
+                activo = Filtro[registro - 1];
+                registro -= 1;
+
             }
 
         }
@@ -245,7 +384,7 @@ namespace armoxiDB
 
             if (Input.Length == 0){
 
-
+                Output = "".Split(Convert.ToChar("4"));
 
             }  else
             {

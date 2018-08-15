@@ -1,0 +1,25 @@
+﻿Truco € Trapicheo
+Luz lunar € Sol matinal
+Síntesis € Sol matinal
+Látigo € Malicioso
+Masa cósmica € Reserva
+Meditación € Aullido
+Pantalla de humo € Ataque arena
+Profecía € Rastreo
+Detección € Protección
+Aligerar € Agilidad
+Silbato € Canto
+Remolino € Rugido
+Refugio € Fortaleza
+Barrera € Defensa férrea
+Desarollo € Avivar
+Relajo € Recuperación
+Bloqueo € Mal de ojo
+Arañazo € Placaje + Golpes Furia
+Destructor € Placaje
+Presa € Ataque furia
+Doble bofetón € Ataque furia
+Cargatóxica € Carga tóxica
+Picotazo venenoso € Picotazo veneno
+//Beso amoroso $ Somnífero
+//Encanto $ Danza pluma
